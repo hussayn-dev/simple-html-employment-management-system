@@ -1,0 +1,26 @@
+<div>
+<% if(searchResult) {%>
+    <% searchResult.forEach(search => {%>
+<%= search.name %>
+<%= search.email %>
+<%= search.role %>
+<% if(search.role === "Employee") {%>
+    <div>
+        <form action="/task/userTask/<%=  search._id %>">
+            <button class="btn btn-danger" type="submit"> Check tasks<c/button>
+          </form>  
+        </div>
+       
+ <%   } %> 
+<div>
+<form action="/user/<%=  search._id %>?_method=DELETE" method="POST">
+    <button class="btn btn-danger" type="submit">Delete</button>
+  </form>  
+</div>
+ <%   }) %>
+
+
+<% } %>
+</div>
+
+<%- include('_footer') %>

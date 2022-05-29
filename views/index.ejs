@@ -1,0 +1,33 @@
+<h1>Hiiiiii <%= user.name %></h1>
+<form action="/user/register">
+    <input type="submit" value="Create an Employer" />
+</form>
+
+<form action="/user/me">
+    <input type="submit" value="My Profile" />
+</form>
+<%- include('_footer') %>
+  <form action="/user/display">
+    <button class="btn btn-danger" type="submit">Employees</button>
+  </form> 
+  <h1>Create a Task</h1> 
+  <form action="/task/employee" method="POST">
+    <div>
+        <label for="employee">Name of Employee</label>
+        <select name="name" id="">
+          <% employees.forEach(employee => { %>
+<option value="<%=employee.name %>"><%=employee.name %></option>
+         <%          }) %>
+        </select>
+        
+    </div>
+    <div>
+        <label for="description">Name of Task</label>
+        <input type="text" id="description" name="description" required>
+    </div>
+   
+    <button type="submit">Register</button>
+
+    </form>  
+ 
+    

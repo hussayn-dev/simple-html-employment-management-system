@@ -1,0 +1,23 @@
+<% tasks.forEach(task => { %>
+    <div>
+    <div> 
+        <h4>Description :   <%= task.description %> </h4>
+      </div>
+        <div>
+        <h4>Completed :  <%= task.completed %></h4>
+        <div>
+            <form action="/task/userTask/<%=  task._id %>?_method=PATCH" method="POST">
+                <div>       
+                    <label for="completed">Completed</label>
+                    <input type="text" id="completed" name="completed" required>
+                </div>
+                <button type="submit">Edit</button>  
+            </form>
+        </div>
+   </div> 
+    </div>
+  
+
+<% }) %>
+
+<%- include('_footer') %>

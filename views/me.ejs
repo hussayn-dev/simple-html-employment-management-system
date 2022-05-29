@@ -1,0 +1,32 @@
+<h1>name : <%= user.name %></h1>
+
+
+<h1>Edit</h1>
+<form action="/user/edit?_method=PATCH" method="POST">
+  <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" >
+    </div>
+    <div>
+        <label for="email"> Email</label>
+        <input type="email" id="email" name="email" >
+    </div>
+    <div>
+        <label for="password">Old Password</label>
+        <input type="password" id="oldpass" name="oldpass" >
+    </div>
+    <div>
+        <label for="password">New Password</label>
+        <input type="password" id="newpass" name="newpass">
+    </div>
+    <div>
+        <label for="password">Confirm Password</label>
+        <input type="password" id="newpassConfirm" name="newpassConfirm">
+    </div>
+    <button type="submit">Save</button>
+
+    </form>  
+ 
+
+
+<%- include('_footer') %>
